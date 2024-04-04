@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark-Light Mode</title>
+    <style>
+        .heading {
+            text-align: center;
+            color: rgb(17, 165, 27);
+            font-size: 50px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode',;
+        }
+        .same-theme{
+            width: 50px;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 5px;
+        }
+
+        .dark-icon{
+            align-items: center;
+            margin-left: 8px; 
+            background-color:  rgb(255, 251, 251);     
+        }
+        .light-icon{
+            margin-left: 14px;
+        }
+        .light-icon:hover{
+            background-color: rgb(55, 55, 55);
+            transition: 2s;
+
+        }
+        .theme-dark {
+            background-color: rgb(55, 55, 55);
+            color: white;
+        }
+        .theme-light {
+            background-color: rgb(255, 254, 251);
+            color: black;
+        }
+        
+        .decs{
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Segoe UI',  'Open Sans', 'Helvetica Neue';
+            font: bold;
+        }
+
+.align-center{
+      border: 2px solid;
+      padding:3px 3px 3px 3px ;
+      margin:3px 46px 3px 46px;
+      border-radius: 12px;
+}
+    </style>
+</head>
+<body id="body">
+        <div>
+        <img src="./img/dark.png" class="dark-icon same-theme active" id="img-dark" onclick="darkMode()" />
+        <img src="./img/light.png" class="light-icon same-theme" id="img-light" onclick="lightMode()" /></div>
+       
+        <h1 class="heading">....Dark - Light Mode....</h1>
+        
+<div class="align-center">
+        <p class="decs"><b>Dark Theme:</b><br>
+           Reduced Eye Strain: Dark themes are often preferred in low-light environments as they reduce the strain on the eyes, especially in dimly lit rooms or at night. The darker background causes less glare, making it easier on the eyes.
+            Battery Savings.
+           <br><br> <b>Light Theme:</b><br>
+            Readability: Light themes often provide better readability, particularly in well-lit environments or for users with certain visual impairments.
+            Familiarity.</p>
+    </div>
+
+
+
+    <script>
+        function darkMode()
+        {
+            const imgDark = document.getElementById("img-dark");
+            imgDark.classList.add("active");
+
+            const imgLight = document.getElementById("img-light");
+            imgLight.classList.remove("active");
+
+            const bodyElement= document.getElementById("body");
+            bodyElement.className = "theme-dark";
+        }
+
+        function lightMode()
+        {
+            const imgDark = document.getElementById("img-dark");
+            imgDark.classList.remove("active");
+
+            const imgLight = document.getElementById("img-light");
+            imgLight.classList.add("active");
+
+            const bodyElement= document.getElementById("body");
+            bodyElement.className = "theme-light";
+        }
+    </script>
+</body>
+</html>
